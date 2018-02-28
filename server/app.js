@@ -12,7 +12,8 @@ const { Strategy, ExtractJwt } = require("passport-jwt");
 const mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost/minkapp-db");
 
-var app = express();
+//localhost/minkapp-db
+mongodb: var app = express();
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
