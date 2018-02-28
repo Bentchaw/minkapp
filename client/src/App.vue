@@ -4,6 +4,7 @@
     <router-view/>
   </div>
 </template>
+
 <script>
 import navbar from "@/components/navbar";
 import Vue from "vue";

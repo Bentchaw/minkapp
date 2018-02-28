@@ -1,8 +1,5 @@
 <template>
- 
-  
-
-
+<form @submit.prevent="signup">
 <div class="field">
   <label class="label">Pseudo</label>
   <div class="control has-icons-left has-icons-right">
@@ -87,8 +84,6 @@
   
 </div>
 
-
-
 <div class="field">
   <label class="label">Code Postal</label>
   <div class="control has-icons-left has-icons-right">
@@ -117,11 +112,6 @@
   
 </div>
 
-
-
-
-
-
 <div class="field">
   <label class="label">Email</label>
   <div class="control has-icons-left has-icons-right">
@@ -133,7 +123,6 @@
       <i class="fas fa-exclamation-triangle"></i>
     </span>
   </div>
-  
 </div>
 
 <div class="field">
@@ -208,8 +197,6 @@
      <input type="checkbox" name="competences">
      Competence20
     </label>
-
-    
   </div>
 </div>
 
@@ -221,23 +208,47 @@
     <button class="button is-text">Cancel</button>
   </div>
 </div> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</form>
 </template>
 
+<script>
+import api from "../api";
+
+export default {
+  data() {
+    return {
+      name: "",
+      username: "",
+      password: "",
+
+      error: null
+    };
+  },
+  methods: {
+    signup() {
+      this.error = null;
+      api
+        .signup({
+          name: this.name,
+          username: this.username,
+          password: this.password
+        })
+        .then(() => {
+          this.$router.push("/login");
+        })
+        .catch(err => {
+          this.error = err;
+        });
+    }
+  },
+
+  computed: {
+    usernameError() {
+      if (!this.error) return null;
+      if (this.error.name === "UserExistsError") {
+        return this.error.message;
+      }
+    }
+  }
+};
+</script>
