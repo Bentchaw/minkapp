@@ -4,7 +4,7 @@
       <router-link to="/about">Coach</router-link>
       <router-link to="/about">Candidat</router-link>
       <router-link to="/about">Entreprise</router-link>
-      <router-link to="/about">Voir les</router-link>
+      <router-link to="/about">Voir les offres </router-link>
     </div>
 </template>
    

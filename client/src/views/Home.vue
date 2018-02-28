@@ -1,9 +1,10 @@
 <template>
     <!-- <img class= "homeImage"  src="/images/mentor.jpg" > -->
     <div class="home-text">
-      <h1>Trouver un travail, c'est deja un job a plein temps</h1>
-
+      <h1><strong>  Trouver un travail, c'est deja un job a plein temps</strong></h1>
+<br><br>
       <center></center>
+      
     
     
   </div>
