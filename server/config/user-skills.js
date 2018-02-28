@@ -1,0 +1,23 @@
+module.exports = [
+  "Anglais",
+  "Faire un CV",
+  "Faire une lettre de motivation",
+  "Se présenter",
+  "Parler en public",
+  "Aptitude informatique",
+  "Relation client",
+  "Demarches administratives",
+  "Confiance en soi",
+  "Suite Office",
+  "Bâtiment",
+  "Sécurité",
+  "Reconversion professionnelle",
+  "Petite enfance",
+  "Enseignement",
+  "Cuisine",
+  "Service bar",
+  "Plomberie",
+  "Peinture",
+  "Taxi / Uber",
+  "Freelance"
+];
