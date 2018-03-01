@@ -20,20 +20,20 @@ const errHandler = err => {
   console.error(err.response.data);
   throw err.response.data;
 };
-
+//POLE EMPLOI API
 export function access() {
   const peInfo = {
     grant_type: config.grantType,
     client_id: config.clientId,
     client_secret: config.clientSecret,
-    scope: config.scope
+    scope: config.scopeConnect
   };
   return accesstoken
     .post("/", peInfo)
     .then(res => {
       const { access } = res;
       axios.defaults.headers.common["Authorization"] = "Bearer " + access.token;
-      res.data;
+      return res.data;
     })
     .catch(errHandler);
 }
@@ -44,12 +44,13 @@ export function listemploi() {
     .then(res => {
       const { access } = res;
       axios.defaults.headers.common["Authorization"] = "Bearer " + access.token;
-      res.data;
+      return res.data;
     })
     .catch(errHandler);
 }
 
 export default {
+  //AUTH
   signup(userInfo) {
     return service
       .post("/signup", userInfo)

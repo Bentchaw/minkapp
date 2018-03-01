@@ -28,6 +28,11 @@ export default new Router({
       path: "/login",
       name: "login",
       component: Login
+    },
+    {
+      path: "/emplois",
+      name: "emplois",
+      component: Emploi
     }
   ]
 });
