@@ -1,21 +1,44 @@
 <template>
-    <!-- <img class= "homeImage"  src="/images/mentor.jpg" > -->
-    <div class="home-text">
-      <h1><strong>  Trouver un travail, c'est deja un job a plein temps</strong></h1>
-<br><br>
-      <center></center>
+
+<div>
+  <navbar></navbar>
+  <homePicture></homePicture>
+  <coach></coach>
+  <candidat></candidat>
+  <recompense></recompense>
+  <pourTous></pourTous>
+  <MinkFooter></MinkFooter>
       
     
     
   </div>
 </template>
 
+<style>
+
+</style>
+
+
  <script>
-import center from "../components/center";
+import coach from "../components/coach";
+import homePicture from "../components/homePicture";
+import candidat from "../components/candidat";
+import recompense from "../components/recompense";
+import MinkFooter from "../components/MinkFooter";
+import navbar from "../components/navbar";
+import pourTous from "../components/pourTous";
 
 export default {
   name: "home",
-  components: { center }
+  components: {
+    coach,
+    homePicture,
+    candidat,
+    recompense,
+    MinkFooter,
+    pourTous,
+    navbar
+  }
 };
 //
 </script>
