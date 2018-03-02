@@ -1,4 +1,5 @@
 <template>
+
 <form @submit.prevent="signup">
 <div class="field">
   <label class="label">Pseudo</label>
@@ -200,6 +201,7 @@
   </div>
 </div> 
 </form>
+</div>
 </template>
 
 <script>
@@ -250,3 +252,7 @@ export default {
   }
 };
 </script>
+<style scoped>
+
+</style>
+

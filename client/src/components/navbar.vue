@@ -22,16 +22,16 @@ export default {
 }
 </style> -->
 
-<section class="hero is-primary is-medium">
+<section class="hero light is-bold is-medium">
   <!-- Hero head: will stick at the top -->
   <div class="hero-head">
-    <nav class="navbar">
-      <div class="container">
+    <nav class="navbar ">
+      <div class="container ">
         <div class="navbar-brand">
           <a class="navbar-item">
             <img src="/images/Mink.png" alt="Logo">
           </a>
-          <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+          <span class="navbar-burger burger is-transparent" data-target="navbarMenuHeroA">
             <span></span>
             <span></span>
             <span></span>
@@ -39,7 +39,7 @@ export default {
         </div>
         <div id="navbarMenuHeroA" class="navbar-menu">
           <div class="navbar-end">
-            <a class="navbar-item is-active">
+            <a class="navbar-item ">
              Coach
             </a>
             <a class="navbar-item">
@@ -51,7 +51,7 @@ export default {
             <span class="navbar-item">
               <a class="button is-primary is-inverted">
                 <span class="icon">
-                  <i class="clipboard"></i>
+                  <i class="fas fa-search"></i>
                 </span>
                 <span>Voir les offres</span>
               </a>
