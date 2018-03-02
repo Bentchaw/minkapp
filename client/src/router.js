@@ -32,16 +32,6 @@ export default new Router({
     //   component: Login
     // },
     {
-<<<<<<< HEAD
-      path: "/login",
-      name: "login",
-      component: Login
-    },
-    {
-      path: "/emplois",
-      name: "emplois",
-      component: Emploi
-=======
       path: "/emplois",
       name: "emplois",
       component: Emploi
@@ -50,7 +40,6 @@ export default new Router({
       path: "/emplois/detail",
       name: "emploisDetail",
       component: EmploiDetail
->>>>>>> a72ac1e39178451bd9cb965fd1583765095f7a69
     }
   ]
 });
