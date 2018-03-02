@@ -16,9 +16,7 @@ export default {
 };
 </script>
 
-<<<<<<< HEAD
-<style>
-=======
+
 <style lang="sass">
 
 .is-newWhite
@@ -33,10 +31,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-
-
-
-
->>>>>>> 25e67f27f0c4507e23f60aa179e4ecae2d7f53cd
 
 </style>
