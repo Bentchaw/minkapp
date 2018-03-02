@@ -16,34 +16,19 @@ const listjob = axios.create({
 const showjob = axios.create({
   baseURL: "https://api.emploi-store.fr/partenaire/offresdemploi/v1/offres/"
 });
-//show detail
-router.get("/:id", (req, res, next) => {
-  const offerid = req.params.id;
-  showjob
-    .get("/:offerid")
-    .then(res => {
-      return res.status(200).json(res.data);
-    })
-    .catch(err => {
-      return res.status(500).json({
-        success: false,
-        message: "l'offre d'emploi ne peut être chargée"
-      });
-    });
-});
 
-router.get("/:id", (req, res, next) => {
-  let movieId = req.params.id;
-  Movie.findById(movieId, (err, movie) => {
-    if (err) {
-      return next(err);
-    }
-    res.render("movies/show", {
-      title: "Movie show",
-      movie: movie
-    });
-  });
-});
+// router.get("/:id", (req, res, next) => {
+//   let movieId = req.params.id;
+//   Movie.findById(movieId, (err, movie) => {
+//     if (err) {
+//       return next(err);
+//     }
+//     res.render("movies/show", {
+//       title: "Movie show",
+//       movie: movie
+//     });
+//   });
+// });
 
 const body = {
   grant_type: config.grantType,
@@ -96,43 +81,20 @@ router.post("/", (req, res, next) => {
     });
 });
 
-// router.post("/", (req, res, next) => {
-//   // if (!req.body.technicalParameters || !req.body.criterias) {
-//   //   return res
-//   //     .status(400)
-//   //     .json({ success: false, message: "paramètre manquant" });
-//   // }
-//   // console.log(req.body);
-//   console.log(querystring.stringify(body));
-//   accesstoken
-//     .post(`/access_token`, queryBody, {
-//       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-//       params: {
-//         realm: "/partenaire"
-//       }
-//     })
-//     .then(result => {
-//       const token = result.data.access_token;
-//       listjob.defaults.headers.common["Authorization"] = "Bearer " + token;
-//       console.log("HEADERS", listjob.defaults.headers);
-//       listjob
-//         .post("/", req.body.info)
-//         .then(result => {
-//           res.status(200).json(result.data);
-//         })
-//         .catch(err => {
-//           console.error(err.response);
-//           return res
-//             .status(500)
-//             .json({ success: false, message: "comportement inattentu" });
-//         });
-//     })
-//     .catch(err => {
-//       console.error(err.response);
-//       return res
-//         .status(500)
-//         .json({ success: false, message: "comportement inattentu" });
-//     });
-// });
+// show detail
+router.get("/:id", (req, res, next) => {
+  const offerid = req.params.id;
+  showjob
+    .get(`/${offerid}`)
+    .then(res => {
+      return res.status(200).json(res.data);
+    })
+    .catch(err => {
+      return res.status(500).json({
+        success: false,
+        message: "l'offre d'emploi ne peut être chargée"
+      });
+    });
+});
 
 module.exports = router;

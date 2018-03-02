@@ -7,7 +7,8 @@
 
 
 <!-- card bulma -->
-<div v-for="(job, index) in jobs" :key="index">
+<div class="columns is-multiline">
+<div v-for="(job, index) in jobs" :key="index" class="column is-half">
 <div class="card">
   <header class="card-header">
     <p class="card-header-title">
@@ -17,7 +18,7 @@
   <div class="card-content">
     <div class="content">
       <div>{{ job.cityName }} {{job.postcode}}</div>
-      <div>{{job.companyDescription}}</div>
+      <div class="job-desc">{{job.companyDescription}}</div>
       <br>
       <time>Date de création: {{job.creationDate}}</time>
     </div>
@@ -30,8 +31,17 @@
 </div>
 
 </div>
+</div>
 
 </template>
+
+<style scoped>
+.job-desc {
+  height: 100px;
+  overflow: hidden;
+}
+</style>
+
 
 <script>
 import api from "../api";
