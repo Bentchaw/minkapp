@@ -3,8 +3,9 @@ import Router from "vue-router";
 import Home from "./views/Home.vue";
 import About from "./views/About.vue";
 // import Register from "./views/Register.vue";
-import Login from "./views/Login.vue";
+// import Login from "./views/Login.vue";
 import Emploi from "./views/Emploi.vue";
+import EmploiDetail from "./views/EmploiDetail.vue";
 
 Vue.use(Router);
 
@@ -25,7 +26,13 @@ export default new Router({
     //   name: "register",
     //   component: Register
     // },
+    // {
+    //   path: "/login",
+    //   name: "login",
+    //   component: Login
+    // },
     {
+<<<<<<< HEAD
       path: "/login",
       name: "login",
       component: Login
@@ -34,6 +41,16 @@ export default new Router({
       path: "/emplois",
       name: "emplois",
       component: Emploi
+=======
+      path: "/emplois",
+      name: "emplois",
+      component: Emploi
+    },
+    {
+      path: "/emplois/detail",
+      name: "emploisDetail",
+      component: EmploiDetail
+>>>>>>> a72ac1e39178451bd9cb965fd1583765095f7a69
     }
   ]
 });
