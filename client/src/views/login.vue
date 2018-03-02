@@ -5,7 +5,7 @@
   </div>
   <form @submit.prevent="login">
 <body class="layout-default">
-  <section class="hero is-fullheight is-medium  is-bold">
+  <section class="hero is-fullheight is-medium is-bold">
         <div class="hero-body">
           <div class="container">
             <div class="columns is-centered">
@@ -47,8 +47,10 @@
 </template>
 
 <style>
- {
-  background-color: white;
+body {
+  background-image: url(/images/login.jpeg);
+  background-size: cover;
+  background-position: center;
 }
 </style>
 
