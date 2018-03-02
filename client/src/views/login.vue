@@ -1,11 +1,11 @@
 <template>
-<section>
+<section >
   <div type="is-danger" has-icon v-if="error">
     {{ error.error }}
   </div>
   <form @submit.prevent="login">
 <body class="layout-default">
-  <section class="hero is-fullheight is-medium is-primary is-bold">
+  <section class="hero is-fullheight is-medium  is-bold">
         <div class="hero-body">
           <div class="container">
             <div class="columns is-centered">
@@ -45,6 +45,13 @@
 </form>
 </section>
 </template>
+
+<style>
+ {
+  background-color: white;
+}
+</style>
+
 
 <script>
 import api from "../api";
