@@ -6,48 +6,10 @@ const service = axios.create({
     process.env.NODE_ENV === "production" ? "/api" : "http://localhost:3000/api"
 });
 
-const accesstoken = axios.create({
-  baseURL:
-    "https://entreprise.pole-emploi.fr/connexion/oauth2/access_token?realm=%2Fpartenaire"
-});
-
-const listjob = axios.create({
-  baseURL:
-    "https://api.emploi-store.fr/partenaire/offresdemploi/v1/rechercheroffres"
-});
-
 const errHandler = err => {
   console.error(err.response.data);
   throw err.response.data;
 };
-//POLE EMPLOI API
-export function access() {
-  const peInfo = {
-    grant_type: config.grantType,
-    client_id: config.clientId,
-    client_secret: config.clientSecret,
-    scope: config.scopeConnect
-  };
-  return accesstoken
-    .post("/", peInfo)
-    .then(res => {
-      const { access } = res;
-      axios.defaults.headers.common["Authorization"] = "Bearer " + access.token;
-      return res.data;
-    })
-    .catch(errHandler);
-}
-
-export function listemploi() {
-  return listjob
-    .get("/")
-    .then(res => {
-      const { access } = res;
-      axios.defaults.headers.common["Authorization"] = "Bearer " + access.token;
-      return res.data;
-    })
-    .catch(errHandler);
-}
 
 export default {
   //AUTH
@@ -94,5 +56,42 @@ export default {
       return user;
     }
     return false;
+  },
+
+  //API Pole Emploi
+  search(token, departement) {
+    return service
+      .post(
+        `/pe`,
+        {
+          info: {
+            technicalParameters: {
+              page: 1,
+              per_page: 150,
+              sort: 1
+            },
+            criterias: {
+              departmentCode: departement
+            }
+          }
+        },
+        {
+          headers: {
+            "x-access-token": token
+          }
+        }
+      )
+      .then(res => {
+        console.log(res.data);
+        return res.data;
+      })
+      .catch(err => {
+        console.error(err);
+        throw err;
+      });
+  },
+
+  getToken() {
+    return service.get("/pe/token").then(res => res.data);
   }
 };

@@ -57,6 +57,7 @@ passport.use(strategy);
 
 app.use("/", require("./routes/index"));
 app.use("/api", require("./routes/auth"));
+app.use("/api/pe", require("./routes/job"));
 app.use("/api/candidat", require("./routes/candidat"));
 
 // catch 404 and forward to error handler
