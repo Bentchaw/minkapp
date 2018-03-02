@@ -16,28 +16,6 @@ export default {
 };
 </script>
 
-<style lang="sass">
-$primary: #F0F;
- 
-
-#app 
-  font-family: "San Francisco", San Francisco, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-
-
-#nav 
-  s: 30px;
-
-
-#nav a 
-  font-weight: bold;
-  color: #2c3e50;
-
-
-#nav a.router-link-exact-active 
-  color: #42b983;
+<style>
 
 </style>
