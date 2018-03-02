@@ -5,17 +5,26 @@
 
 
 
-<section class="hero is-info is-bold">
+<section class="hero is-light is-bold">
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
-        Candidat
-      </h1>
+        <u>Candidat</u>
+      </h1><br>
       <h2 class="subtitle">
-        grâce à un accompagnement soigné développez vos competences, retrouvez une dynamique positive, et surtout trouvez un job!
+        Grâce à un accompagnement soigné développez vos competences, retrouvez une dynamique positive, et surtout trouvez un job! <br>
+        Vous profiterez d'un package de retour à l emploi offert par nos partenaires. 
       </h2>
-    </div>
+    </div><br>
   </div>
 </section>
 
 </template>
+
+<style scoped>
+.hero-body {
+  background-image: url(/images/recomp.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+</style>
