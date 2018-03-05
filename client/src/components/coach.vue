@@ -23,6 +23,7 @@
 .hero-body {
   background-image: url(/images/coachSuper.jpeg);
   background-repeat: no-repeat;
-  background-size: cover;
+  /* background-size: contain; */
+  background-size: 1200px 300px;
 }
 </style>

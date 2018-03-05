@@ -15,7 +15,7 @@ Pour le coach: 500€ tout simplement!<br>
 
 Pour l'entreprise Mink s'occupe de l ensemble de formalitées administratives et vous accompagne pour beneficier de l'ensemble des encouragements fiscaux mis en place par votre departement.
       </h2>
-    </div><br><br><br><br><br><br><hr color="silver">
+    </div><br><br>
   </div>
 </section>
 </template>
@@ -24,7 +24,7 @@ Pour l'entreprise Mink s'occupe de l ensemble de formalitées administratives et
 .hero-body {
   background-image: url(/images/papi.png);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 1200px 300px;
 }
 </style>
 
