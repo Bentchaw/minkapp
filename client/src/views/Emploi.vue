@@ -24,8 +24,7 @@
     </div>
   </div>
   <footer class="card-footer">
-    <router-link to="">Voir l'offre en détail</router-link>
-    <a href="#" class="card-footer-item">Détail</a>
+    <a :href="'/emplois/'+job.offerId" class="card-footer-item">Détails</a>    
   </footer>
 </div>
 </div>
@@ -56,7 +55,7 @@ export default {
   },
   methods: {
     recherche() {
-      console.log("MEH");
+      // console.log("MEH");
       api.getToken().then(res => {
         api.search(res.access_token, this.departement).then(res => {
           this.jobs = res.results;

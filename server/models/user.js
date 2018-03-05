@@ -19,32 +19,32 @@ const userSchema = new Schema({
     unique: true
   },
   firstname: {
-    // required: true,
+    required: true,
     type: String
   },
   adresses: {
     adress: {
-      // required: true,
+      required: true,
       type: String
     },
     zipcode: {
-      // required: true,
+      required: true,
       type: String
     },
     city: {
-      // required: true,
+      required: true,
       type: String
     }
   },
   category: [
     {
-      // required: true,
+      required: true,
       enum: SKILLS,
       type: String
     }
   ],
   role: {
-    // required: true,
+    required: true,
     enum: ["coach", "candidat"],
     type: String
   },

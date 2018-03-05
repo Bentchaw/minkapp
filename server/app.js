@@ -59,6 +59,7 @@ app.use("/", require("./routes/index"));
 app.use("/api", require("./routes/auth"));
 app.use("/api/pe", require("./routes/job"));
 app.use("/api/candidat", require("./routes/candidat"));
+app.use("/api/coach", require("./routes/coach"));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

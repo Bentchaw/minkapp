@@ -47,15 +47,11 @@
 </template>
 
 <style>
-<<<<<<< HEAD
 body {
   background-image: url(/images/login.jpeg);
   background-size: cover;
   background-position: center;
 }
-=======
-
->>>>>>> a72ac1e39178451bd9cb965fd1583765095f7a69
 </style>
 
 
