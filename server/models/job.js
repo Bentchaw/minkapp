@@ -2,26 +2,25 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const jobSchema = new Schema({
+  companyName: String,
   title: String,
   description: String,
   cityName: String,
-  contract: String,
+  contractTypeName: String,
   contractDuration: Number,
+  experienceName: String,
+  gpsLatitude: Number,
+  gpsLongitude: Number,
+  salaryComment: String,
   weeklyWorkTime: String,
-  weeklyWorkTimeTypeName: String,
   minSalary: Number,
   experienceName: String,
-  skills: [
-    {
-      type: String
-    }
-  ],
-  professionalQualities: [
-    {
-      type: String
-    }
-  ],
-  activityName: String
+  skills: [{}],
+  activityName: String,
+  candidatId: {
+    type: Schema.Types.ObjectId,
+    ref: "User"
+  }
 });
 
 module.exports = mongoose.model("Job", jobSchema);

@@ -6,10 +6,6 @@ const service = axios.create({
     process.env.NODE_ENV === "production" ? "/api" : "http://localhost:3000/api"
 });
 
-// const showjob = axios.create({
-//   baseURL: "https://api.emploi-store.fr/partenaire/offresdemploi/v1/offres/"
-// });
-
 const errHandler = err => {
   console.error(err.response.data);
   throw err.response.data;
@@ -55,7 +51,7 @@ export default {
     const userData = localStorage.getItem("user");
     if (!userData) return false;
     const user = JSON.parse(userData);
-    if (user.token && user.name) {
+    if (user.token && user.username) {
       axios.defaults.headers.common["Authorization"] = "Bearer " + user.token;
       return user;
     }
@@ -99,9 +95,9 @@ export default {
     return service.get("/pe/token").then(res => res.data);
   },
 
-  showOffer(token) {
+  showOffer(id, token) {
     return service
-      .get(`/pe/:id`, {
+      .get(`/pe/${id}`, {
         headers: {
           "x-access-token": token
         }
@@ -111,6 +107,16 @@ export default {
         return res.data;
       })
       .catch();
+  },
+
+  addOfferDashbord(id, add) {
+    return service
+      .post(`/pe/${id}`, add)
+      .then(res => res.data)
+      .catch(err => {
+        console.error(err);
+        throw err;
+      });
   }
 
   //USER - COACH
