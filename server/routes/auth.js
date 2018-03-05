@@ -34,9 +34,9 @@ router.post("/signup", (req, res, next) => {
     email,
     password,
     adresses: {
-      adress,
-      zipcode,
-      city
+      adress: adress,
+      zipcode: zipcode,
+      city: city
     },
     description,
     category,

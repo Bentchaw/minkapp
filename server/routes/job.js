@@ -17,19 +17,6 @@ const showjob = axios.create({
   baseURL: "https://api.emploi-store.fr/partenaire/offresdemploi/v1/offres/"
 });
 
-// router.get("/:id", (req, res, next) => {
-//   let movieId = req.params.id;
-//   Movie.findById(movieId, (err, movie) => {
-//     if (err) {
-//       return next(err);
-//     }
-//     res.render("movies/show", {
-//       title: "Movie show",
-//       movie: movie
-//     });
-//   });
-// });
-
 const body = {
   grant_type: config.grantType,
   client_id: config.clientId,
@@ -48,6 +35,26 @@ const info = {
     departmentCode: 93
   }
 };
+
+// show detail
+router.get("/:id", (req, res, next) => {
+  const offerid = req.params.id;
+  console.log(offerid);
+  showjob
+    .get(`/${offerid}`, {
+      headers: { Authorization: `Bearer ${req.headers["x-access-token"]}` }
+    })
+    .then(result => {
+      return res.status(200).json(result.data);
+    })
+    .catch(err => {
+      return res.status(500).json({
+        success: false,
+        message: "l'offre d'emploi ne peut être chargée"
+      });
+    });
+});
+
 router.get("/token", (req, res, next) => {
   accesstoken
     .post(`/access_token`, queryBody, {
@@ -78,22 +85,6 @@ router.post("/", (req, res, next) => {
       return res
         .status(500)
         .json({ success: false, message: "comportement inattentu" });
-    });
-});
-
-// show detail
-router.get("/:id", (req, res, next) => {
-  const offerid = req.params.id;
-  showjob
-    .get(`/${offerid}`)
-    .then(res => {
-      return res.status(200).json(res.data);
-    })
-    .catch(err => {
-      return res.status(500).json({
-        success: false,
-        message: "l'offre d'emploi ne peut être chargée"
-      });
     });
 });
 

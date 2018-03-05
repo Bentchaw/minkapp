@@ -6,6 +6,10 @@ const service = axios.create({
     process.env.NODE_ENV === "production" ? "/api" : "http://localhost:3000/api"
 });
 
+// const showjob = axios.create({
+//   baseURL: "https://api.emploi-store.fr/partenaire/offresdemploi/v1/offres/"
+// });
+
 const errHandler = err => {
   console.error(err.response.data);
   throw err.response.data;
@@ -93,5 +97,21 @@ export default {
 
   getToken() {
     return service.get("/pe/token").then(res => res.data);
+  },
+
+  showOffer(token) {
+    return service
+      .get(`/pe/:id`, {
+        headers: {
+          "x-access-token": token
+        }
+      })
+      .then(res => {
+        console.log(res);
+        return res.data;
+      })
+      .catch();
   }
+
+  //USER - COACH
 };
