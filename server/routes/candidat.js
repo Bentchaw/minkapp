@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/user");
+const Job = require("../models/job");
 
 router.get("/", (req, res, next) => {
   const id = req.params.id;
@@ -14,8 +15,20 @@ router.get("/", (req, res, next) => {
       throw err;
     });
 });
+router.get("/dashboard/:id", (req, res, next) => {
+  const currentId = req.params.id;
 
-router.get("/:id", (req, res, next) => {
+  Job.find({ candidatId: ObjectId(currentId) })
+    .then(result => {
+      res.status(200).json(result);
+    })
+    .catch(err => {
+      console.error(err);
+      throw err;
+    });
+});
+
+router.get("/profile/:id", (req, res, next) => {
   const id = req.params.id;
   User.findById(id)
     .then(result => res.json(result))

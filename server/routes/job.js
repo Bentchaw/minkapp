@@ -73,7 +73,7 @@ router.get("/:id", (req, res, next) => {
       });
     });
 });
-
+//add job to dashboard
 router.post("/:id", (req, res, next) => {
   const offer = {
     companyName: req.body.companyName,

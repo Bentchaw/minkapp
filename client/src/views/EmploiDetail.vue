@@ -47,7 +47,10 @@ export default {
         candidatId: this.$root.user.id
       };
       // console.log(add);
-      api.addOfferDashbord(this.$route.params.id, add);
+      api
+        .addOfferDashbord(this.$route.params.id, add)
+        .then(res => res.push("/"))
+        .catch();
     }
   },
   created() {
