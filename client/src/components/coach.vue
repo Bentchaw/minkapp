@@ -7,11 +7,14 @@
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
-        <u><b>Devenez coach</b></u>
-      </h1>
+        <b>Devenez coach</b>
+      </h1><br>
       <h2 class="subtitle">
-        <br>Tout le monde peut devenir coach, offrez vos competences a ceux qui en ont besoin et en cas d'embauche vous etes recompensé.
+        <div id=texte>Tout le monde peut devenir coach,<br> offrez vos competences a ceux qui en ont besoin et en cas d'embauche vous etes recompensé.</div>
+        <img src="/images/coachSuper.jpeg" height="250" width="370" alt="super" >
       </h2>
+      <a class="button is-link is-rounded" id=btn>Je me lance</a>
+      <!-- <button id=btn>Je me lance</button> -->
     </div><br>
   </div>
 </section> 
@@ -20,10 +23,15 @@
 
 
 <style scoped>
-.hero-body {
-  background-image: url(/images/coachSuper.jpeg);
-  background-repeat: no-repeat;
-  /* background-size: contain; */
-  background-size: 1200px 300px;
+#texte {
+  height: 200px;
+  width: 50%;
+  background-color: rgb(237, 235, 235);
+  padding-top: 5%;
+  float: left;
+  text-align: unset;
+}
+#btn {
+  float: center;
 }
 </style>

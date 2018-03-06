@@ -22,7 +22,7 @@ export default {
   color: #D2E1DD;
 
 .is-newBlue
-    background-color: #ccf2ff;  
+    background-color: #ffffff ;  
 
 #app 
   font-family: "Raleway light", San Francisco, Arial, sans-serif;

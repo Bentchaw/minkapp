@@ -16,5 +16,7 @@
   </section>
 </template>    
 <style scoped>
-
+* {
+  background-color: silver;
+}
 </style>

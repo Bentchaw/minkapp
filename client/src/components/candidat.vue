@@ -9,7 +9,7 @@
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
-        <u>Candidat</u>
+        Candidat
       </h1><br>
       <h2 class="subtitle">
         Grâce à un accompagnement soigné développez vos competences, retrouvez une dynamique positive, et surtout trouvez un job! <br>
