@@ -1,16 +1,22 @@
 <template>
   <div id="app">
+      <navbar></navbar>
     <router-view/>
   </div>
 </template>
 
 <script>
-import navbar from "@/components/navbar";
-import Vue from "vue";
+import navbar from "./components/navbar";
+// import Vue from "vue";
+import api from "./api";
 
 export default {
   components: {
     navbar
+  },
+  created() {
+    const user = api.loadUser();
+    if (user) return (this.$root.user = user);
   }
 };
 </script>

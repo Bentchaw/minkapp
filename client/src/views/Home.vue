@@ -1,7 +1,6 @@
 <template>
 
 <div>
-  <navbar></navbar>
   <homePicture></homePicture>
   <coach></coach>
   <candidat></candidat>
@@ -25,7 +24,6 @@ import homePicture from "../components/homePicture";
 import candidat from "../components/candidat";
 import recompense from "../components/recompense";
 import MinkFooter from "../components/MinkFooter";
-import navbar from "../components/navbar";
 import pourTous from "../components/pourTous";
 
 export default {
@@ -36,8 +34,7 @@ export default {
     candidat,
     recompense,
     MinkFooter,
-    pourTous,
-    navbar
+    pourTous
   }
 };
 //

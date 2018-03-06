@@ -24,12 +24,6 @@
                     <i class="fa fa-lock"></i>
                   </p>
                   <p class="control">
-                    <label class="checkbox">
-                      <input type="checkbox">
-                      Se souvenir de moi
-                    </label>
-                  </p>
-                  <p class="control">
                     <button class="button is-primary is-medium is-fullwidth">
                       <i class="fa fa-user"></i>
                       Login
@@ -74,6 +68,7 @@ export default {
         .login(this.username, this.password)
         .then(user => {
           this.$root.user = user;
+          // console.log(this.$root.user);
           this.$router.push("/");
         })
         .catch(err => {

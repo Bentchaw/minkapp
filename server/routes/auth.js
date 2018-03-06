@@ -85,8 +85,11 @@ router.post("/login", (req, res, next) => {
         // only the server is able to decrypt it
         // for the client, this is just a token, he knows that
         // he has to send it
+        const id = user._id;
+        const role = user.role;
+        const username = user.username;
         const token = jwt.encode(payload, config.jwtSecret);
-        res.json({ token });
+        res.json({ token, id, role, username });
       }
     });
   } else {

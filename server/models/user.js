@@ -48,6 +48,10 @@ const userSchema = new Schema({
     enum: ["coach", "candidat"],
     type: String
   },
+  description: {
+    required: true,
+    type: String
+  },
   picPath: String,
   picName: String
 });
