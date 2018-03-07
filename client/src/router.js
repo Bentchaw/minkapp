@@ -6,7 +6,11 @@ import Register from "./views/Register.vue";
 import Login from "./views/Login.vue";
 import Emploi from "./views/Emploi.vue";
 import EmploiDetail from "./views/EmploiDetail.vue";
+<<<<<<< HEAD
 import RecompDetail from "./views/Recompdetail.vue";
+=======
+import DashboardCandidat from "./views/DashboardCandidat.vue";
+>>>>>>> 1fe7a461feb85714d668410e854105e92e9dd5f9
 
 Vue.use(Router);
 
@@ -15,12 +19,10 @@ export default new Router({
   routes: [
     {
       path: "/",
-      name: "home",
       component: Home
     },
     {
       path: "/about",
-      name: "about",
       component: About
     },
     {
@@ -33,17 +35,19 @@ export default new Router({
     },
     {
       path: "/emplois",
-      name: "emplois",
       component: Emploi
     },
     {
       path: "/emplois/:id",
-      name: "emploisDetail",
       component: EmploiDetail
     },
     {
       path: "/Recompdetail",
       component: RecompDetail
+    },
+    {
+      path: "/candidat/dashboard/:id",
+      component: DashboardCandidat
     }
   ]
 });

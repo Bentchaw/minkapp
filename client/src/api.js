@@ -117,7 +117,32 @@ export default {
         console.error(err);
         throw err;
       });
-  }
+  },
 
-  //USER - COACH
+  //DASHBOARD Candidate
+  listOfferDashbord(id) {
+    return service
+      .get(`/candidat/dashboard/${id}`)
+      .then(res => {
+        // console.log(res.data.jobs);
+        return res.data.jobs;
+      })
+      .catch(err => {
+        console.error(err);
+        throw err;
+      });
+  },
+
+  listPotentialCoach(id) {
+    return service
+      .get(`/candidat/dashboard/${id}`)
+      .then(res => {
+        // console.log(res.data.coaches);
+        return res.data.coaches;
+      })
+      .catch(err => {
+        console.error(err);
+        throw err;
+      });
+  }
 };

@@ -76,6 +76,7 @@ router.get("/:id", (req, res, next) => {
 //add job to dashboard
 router.post("/:id", (req, res, next) => {
   const offer = {
+    offerId: req.body.offerId,
     companyName: req.body.companyName,
     title: req.body.title,
     description: req.body.description,
@@ -91,12 +92,14 @@ router.post("/:id", (req, res, next) => {
     experienceName: req.body.experienceName,
     skills: req.body.skills,
     activityName: req.body.activityName,
+    cityName: req.body.cityName,
+    cityCode: req.body.cityCode,
     candidatId: req.body.candidatId
   };
-  Object.keys(offer).forEach(k => {
-    console.log(typeof offer[k]);
-  });
-  console.log(offer);
+  // Object.keys(offer).forEach(k => {
+  //   console.log(typeof offer[k]);
+  // });
+  // console.log(offer);
   const newJob = new Job(offer);
   newJob.save((err, job) => {
     if (err) return next(err);

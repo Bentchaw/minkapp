@@ -28,28 +28,41 @@ export default {
     <nav class="navbar ">
       <div class="container ">
         <div class="navbar-brand">
-          <a class="navbar-item">
+          <a href="/" class="navbar-item">
             <img src="/images/Mink.png" alt="Logo">
           </a>
-          <span class="navbar-burger burger is-transparent" data-target="navbarMenuHeroA">
+          <!-- <span class="navbar-burger burger is-transparent" data-target="navbarMenuHeroA">
             <span></span>
             <span></span>
             <span></span>
-          </span>
+          </span> -->
         </div>
+  
+
         <div id="navbarMenuHeroA" class="navbar-menu">
           <div class="navbar-end">
-            <a class="navbar-item ">
-             Coach
+             <a v-if="isRole === 'candidat'" :href="'/candidat/dashboard/'+this.$root.user.id" class="navbar-item ">
+             Dashboard Candidat
             </a>
-            <a class="navbar-item">
-              Candidat
+            <a v-if="isRole === 'coach'" href='/' class="navbar-item ">
+             Dashboard Coach
             </a>
-            <a class="navbar-item">
-              Entreprise
+             <a href='/' class="navbar-item ">
+             Profil
+            </a>
+
+            <a href='/login' class="navbar-item ">
+             Login
+            </a>
+            <a href="/register" class="navbar-item">
+              Signup
+            </a>
+
+            <a href="/logout" class="navbar-item">
+              Logout
             </a>
             <span class="navbar-item">
-              <a class="button is-primary is-inverted">
+              <a href="/emplois" class="button is-primary is-inverted">
                 <span class="icon">
                   <i class="fas fa-search"></i>
                 </span>
@@ -65,7 +78,12 @@ export default {
   </template>
   <script>
 export default {
-  name: "navbar"
+  data() {
+    return {
+      isRole: this.$root.user.role,
+      haveToken: this.$root.user.token
+    };
+  }
 };
 </script>
 
