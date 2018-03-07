@@ -144,5 +144,30 @@ export default {
         console.error(err);
         throw err;
       });
+  },
+
+  //Profil COACH
+  profilCoach(id) {
+    return service
+      .get(`/coach/profil/${id}`)
+      .then(res => {
+        // console.log(res);
+        return res.data;
+      })
+      .catch(err => {
+        console.error(err);
+        throw err;
+      });
+  },
+  addCoach(id) {
+    return service
+      .post(`/coach/profil/${id}`)
+      .then(res => {
+        return res.data;
+      })
+      .catch(err => {
+        console.error(err);
+        throw err;
+      });
   }
 };

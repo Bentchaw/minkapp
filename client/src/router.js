@@ -8,6 +8,7 @@ import Emploi from "./views/Emploi.vue";
 import EmploiDetail from "./views/EmploiDetail.vue";
 import RecompDetail from "./views/Recompdetail.vue";
 import DashboardCandidat from "./views/DashboardCandidat.vue";
+import ProfilCoach from "./views/ProfilCoach.vue";
 
 Vue.use(Router);
 
@@ -45,6 +46,10 @@ export default new Router({
     {
       path: "/candidat/dashboard/:id",
       component: DashboardCandidat
+    },
+    {
+      path: "/coach/profil/:id",
+      component: ProfilCoach
     }
   ]
 });

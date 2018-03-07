@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const axios = require("axios");
 const querystring = require("querystring");
-const config = require("../conf");
+const config = require("../config");
 const Job = require("../models/job");
 
 const accesstoken = axios.create({
