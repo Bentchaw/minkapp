@@ -6,6 +6,7 @@ import Register from "./views/Register.vue";
 import Login from "./views/Login.vue";
 import Emploi from "./views/Emploi.vue";
 import EmploiDetail from "./views/EmploiDetail.vue";
+import RecompDetail from "./views/Recompdetail.vue";
 
 Vue.use(Router);
 
@@ -24,7 +25,6 @@ export default new Router({
     },
     {
       path: "/register",
-      name: "register",
       component: Register
     },
     {
@@ -40,6 +40,10 @@ export default new Router({
       path: "/emplois/:id",
       name: "emploisDetail",
       component: EmploiDetail
+    },
+    {
+      path: "/Recompdetail",
+      component: RecompDetail
     }
   ]
 });

@@ -15,16 +15,19 @@
    <img src="/images/pap.jpeg" height="auto" width="250" alt="papi" >
   </div>
   <div class="column">
-    Second column
+ <h1><strong>Coach</strong></h1> <br> 
+ <p>Recevez 500€ lors de <br>l' embauche de votre candidat</p>
   </div>
   <div class="column">
-    Third column
+   <h1><strong>Candidat</strong></h1> <br>
+   <p>Profitez de 500€ en bons d'achat pour un retour a l'emploi ideal </p>
   </div>
   <div class="column">
-    Third column
+     <h1><strong>Entreprises</strong></h1> <br>
+   <p>Mink s'occupe de toutes les démarches  </p>
   </div>
  </div>
- <span><a class="button is-link is-rounded" id=btn>Découvrir les récompenses</a></span>
+ <span><a class="button is-newWhite is-rounded" id=btn>Découvrir les récompenses</a></span>
 </div>
 
 
@@ -47,10 +50,7 @@ Pour l'entreprise Mink s'occupe de l ensemble de formalitées administratives et
 .column {
   background-color: silver;
 }
-/* #texte {
-  height: 200px;
-  width: 600px;
-  background-color: rgb(237, 235, 235);
-  float: right; */
+#texte {
+  /* box-shadow: 3px 3px 3px rgb(189, 187, 191); */
+}
 </style>
-

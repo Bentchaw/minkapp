@@ -10,7 +10,7 @@
       <ul>
         <span>Ils peuvent vous aider:</span>
         <li>{{matchId}}
-          <a class="button is-success is-rounded">Envoyer une damande</a>
+          <a class="button is-success is-rounded">Envoyer une demande</a>
           
         </li>
         <li>coachId
