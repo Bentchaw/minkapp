@@ -26,7 +26,7 @@ import api from "../api";
 export default {
   data() {
     return {
-      coaches: {}
+      coaches: []
     };
   },
   methods: {
@@ -36,15 +36,15 @@ export default {
       api.listPotentialCoach(id).then(result => {
         console.log(result);
         console.log(this.$root.user.category);
-        for (i = 0; i < result; i++) {
-          const tab = this.$route.user.category.filter(
+        for (let i = 0; i < result.length; i++) {
+          const tab = this.$root.user.category.filter(
             iterator => result[i].category.indexOf(iterator) !== -1
           );
           if (tab.length >= 3) {
-            this.coaches = result;
+            this.coaches.push(result[i]);
           }
         }
-        this.coaches = result;
+        console.log(this.coaches);
       });
     }
   },
