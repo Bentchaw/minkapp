@@ -9,7 +9,7 @@
         <p>{{coach.firstname}} {{coach.lastname}}</p>
         <p>{{coach.description}}</p>
         <footer class="card-footer">
-          <a :href="'/emplois/'+coach._id" class="card-footer-item">Détail profil coach</a>    
+          <a :href="'/coach/profil/'+coach._id" class="card-footer-item">Détail profil coach</a>    
         </footer>
       </div>
     </div>
@@ -34,6 +34,16 @@ export default {
       const id = this.$route.params.id;
       console.log(id);
       api.listPotentialCoach(id).then(result => {
+        console.log(result);
+        console.log(this.$root.user.category);
+        for (i = 0; i < result; i++) {
+          const tab = this.$route.user.category.filter(
+            iterator => result[i].category.indexOf(iterator) !== -1
+          );
+          if (tab.length >= 3) {
+            this.coaches = result;
+          }
+        }
         this.coaches = result;
       });
     }

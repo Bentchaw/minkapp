@@ -88,8 +88,9 @@ router.post("/login", (req, res, next) => {
         const id = user._id;
         const role = user.role;
         const username = user.username;
+        const category = user.category;
         const token = jwt.encode(payload, config.jwtSecret);
-        res.json({ token, id, role, username });
+        res.json({ token, id, role, username, category });
       }
     });
   } else {
