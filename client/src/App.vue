@@ -28,10 +28,10 @@ export default {
   color: #D2E1DD;
 
 .is-newBlue
-    background-color: #ffffff ;  
+    background-color: 	#E6E6FA   ;  
 
 #app 
-  font-family: "Raleway light", San Francisco, Arial, sans-serif;
+  font-family: "San Francisco", San Francisco, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
