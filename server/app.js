@@ -5,6 +5,7 @@ const logger = require("morgan");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const passport = require("passport");
+const cors = require("cors");
 const User = require("./models/user");
 const config = require("./config");
 const { Strategy, ExtractJwt } = require("passport-jwt");
@@ -21,6 +22,7 @@ app.set("view engine", "jade");
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(cors());
 app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

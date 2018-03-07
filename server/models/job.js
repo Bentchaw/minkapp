@@ -2,10 +2,10 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const jobSchema = new Schema({
+  offerId: String,
   companyName: String,
   title: String,
   description: String,
-  cityName: String,
   contractTypeName: String,
   contractDuration: Number,
   experienceName: String,
@@ -17,6 +17,8 @@ const jobSchema = new Schema({
   experienceName: String,
   skills: [{}],
   activityName: String,
+  cityName: String,
+  cityCode: String,
   candidatId: {
     type: Schema.Types.ObjectId,
     ref: "User"

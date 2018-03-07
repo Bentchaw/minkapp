@@ -3,7 +3,9 @@
   <div class="identity">
     <h1>Bienvenu {{coachID}}</h1>
   </div>
-  <div class="columns">
+
+  <ListOfferAdded />
+  <!-- <div class="columns">
 
     <div class="column is-primary">
       <div class="requests">
@@ -27,15 +29,7 @@
       </ul> 
   </div>
   </div>
-</div>
-
-
-
-
-
-
-
-
+</div> -->
 
 
 
@@ -45,8 +39,6 @@
 <style scoped>
 .dash {
   background-color: gainsboro;
-}
-.banniere {
 }
 </style>
 

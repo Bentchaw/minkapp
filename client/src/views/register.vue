@@ -1,9 +1,12 @@
 <template>
     <section class="container">
+
     <div type="is-danger" has-icon v-if="error">
       {{ error.error }}
     </div>
-      <form @submit.prevent="signup">
+    <div class="card">
+        <div class="card-content">
+<form @submit.prevent="signup"> 
         <b-field label="Username">
             <b-input type="text" v-model="username"></b-input>
         </b-field>
@@ -125,6 +128,12 @@
         </div>
         <button class="button">Créer votre compte</button>
       </form>
+        </div>
+    </div>
+
+
+
+      
     </section>
 </template>
 

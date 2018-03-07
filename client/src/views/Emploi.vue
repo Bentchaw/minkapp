@@ -1,17 +1,26 @@
 <template>
 <div>
 
-  <!-- <input type="text" name="title" v-model="title" placeholder="indiquer un métier recherché"> -->
-  <input type="text" name="departement" v-model="departement" placeholder="indiquer un département"><br>
-  <button @click="recherche">Rechercher</button>
-
-
+ <section class="container">
+   <section class="marginBottom">
+    <b-field>
+      <b-input placeholder="Search..."
+        type="search"
+        icon="magnify" 
+        v-model="departement">
+      </b-input>
+    </b-field>
+  <!-- <input type="text" name="departement" v-model="departement" placeholder="indiquer un département"><br> -->
+  <!-- <button @click="recherche">Rechercher</button> -->
+  <a @click="recherche" class="button is-primary is-rounded ">Rechercher</a>
+  </section>
 <!-- card bulma -->
+<section>
 <div class="columns is-multiline">
 <div v-for="(job, index) in jobs" :key="index" class="column is-half">
 <div class="card">
   <header class="card-header">
-    <p class="card-header-title">
+    <p class="card-header-title centerTitle">
       {{job.title}}
     </p>
   </header>
@@ -30,8 +39,9 @@
 </div>
 
 </div>
+</section>
+</section>
 </div>
-
 </template>
 
 <style scoped>
@@ -66,3 +76,14 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.marginBottom {
+  margin-bottom: 30px;
+}
+
+.centerTitle {
+  text-align: center;
+}
+</style>
+
