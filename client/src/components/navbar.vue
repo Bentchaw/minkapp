@@ -21,7 +21,7 @@
               <div class="navbar-item ">
                 <div class="field is-grouped" v-if="$root.user && isRole ==='candidat'">
                   <p class="control">
-                    Bonjour {{ $root.user.username }}
+                    <span class="navbar-item">Bonjour {{ $root.user.username }}</span>
                   </p>
                   <p class="control">
                     <router-link class="navbar-item" :to="'/candidat/dashboard/'+this.$root.user.id" @click.native="isActive = false">

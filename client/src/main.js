@@ -1,6 +1,10 @@
 import Vue from "vue";
 import Buefy from "buefy";
 import "buefy/lib/buefy.css";
+import "bulma-extensions/bulma-carousel/dist/bulma-carousel.min.css";
+import "bulma-extensions/bulma-steps/dist/bulma-steps.min.css";
+import "bulma-extensions/bulma-pricingtable/dist/bulma-pricingtable.min.css";
+
 import App from "./App.vue";
 import router from "./router";
 

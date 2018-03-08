@@ -27,20 +27,9 @@
    <p>Mink s'occupe de toutes les démarches  </p>
   </div>
  </div>
- <span><a href="/recompdetail" class="button is-dark is-inverted is-rounded" id=btn>Découvrir les récompenses</a></span>
+ <span><a href="/recompdetail" class="button is-dark is-inverted is-rounded" id=btn>Découvrir</a></span>
 </div>
 
-
-
-
-       <!-- Chaque acteur du retour a l 'emploi sera recompensé <br>
-
-Pour le candidat: un package de 500€ de bons d'achat chez nos partenaires (Total, Zara, Cojean...) <br>
-
-Pour le coach: 500€ tout simplement!<br>
-
-Pour l'entreprise Mink s'occupe de l ensemble de formalitées administratives et vous accompagne pour beneficier de l'ensemble des encouragements fiscaux mis en place par votre departement.</div>
-      -->
     </div>
   </div>
 </section>
