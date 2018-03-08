@@ -6,12 +6,10 @@ const matchSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "User"
   },
-  userCandidat: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "User"
-    }
-  ],
+  userCandidat: {
+    type: Schema.Types.ObjectId,
+    ref: "User"
+  },
   date: Date,
   status: {
     enum: ["en cours", "accepté", "refusé"],
