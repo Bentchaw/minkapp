@@ -10,6 +10,7 @@ import RecompDetail from "./views/Recompdetail.vue";
 import DashboardCandidat from "./views/DashboardCandidat.vue";
 import ProfilCoach from "./views/ProfilCoach.vue";
 import ProfilCandidat from "./views/ProfilCandidat.vue";
+import MatchesCandidat from "./views/MatchesCandidat.vue";
 
 Vue.use(Router);
 
@@ -55,6 +56,10 @@ export default new Router({
     {
       path: "/coach/profil/:id",
       component: ProfilCoach
+    },
+    {
+      path: "/candidat/matches/:id",
+      component: MatchesCandidat
     }
   ]
 });

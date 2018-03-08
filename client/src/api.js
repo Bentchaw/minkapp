@@ -183,5 +183,45 @@ export default {
         console.error(err);
         throw err;
       });
+  },
+
+  //MATCH CANDIDAT
+
+  getMatchedList(id) {
+    return service
+      .get(`/candidat/matches/${id}`)
+      .then(res => {
+        // console.log(res.data);
+        return res.data;
+      })
+      .catch(err => {
+        console.error(err);
+        throw err;
+      });
   }
+
+  // getMatchedList(id) {
+  //   return service
+  //     .get(`/candidat/matches/${id}`)
+  //     .then(res => {
+  //       // console.log(res.data);
+  //       return res.data.matched;
+  //     })
+  //     .catch(err => {
+  //       console.error(err);
+  //       throw err;
+  //     });
+  // },
+  // getCoachesList(id) {
+  //   return service
+  //     .get(`/candidat/matches/${id}`)
+  //     .then(res => {
+  //       // console.log(res);
+  //       return res.data.coaches;
+  //     })
+  //     .catch(err => {
+  //       console.error(err);
+  //       throw err;
+  //     });
+  // }
 };
