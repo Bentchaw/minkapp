@@ -1,0 +1,21 @@
+{
+  "name": "minkapp",
+  "version": "1.0.0",
+  "description": "new mink website",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "cd server && npm install",
+    "start": "cd server && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bentchaw/minkapp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bentchaw/minkapp/issues"
+  },
+  "homepage": "https://github.com/Bentchaw/minkapp#readme"
+}
