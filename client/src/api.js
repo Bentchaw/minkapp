@@ -169,5 +169,19 @@ export default {
         console.error(err);
         throw err;
       });
+  },
+
+  //Profil CANDIDAT
+  profilCandidat(id) {
+    return service
+      .get(`/candidat/profil/${id}`)
+      .then(res => {
+        // console.log(res);
+        return res.data;
+      })
+      .catch(err => {
+        console.error(err);
+        throw err;
+      });
   }
 };

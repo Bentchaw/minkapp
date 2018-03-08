@@ -55,74 +55,86 @@ router.get("/token", (req, res, next) => {
 });
 
 // show detail
-router.get("/:id", (req, res, next) => {
-  const offerid = req.params.id;
-  // console.log(offerid);
-  // console.log(req.headers["x-access-token"]);
-  showjob
-    .get(`/${offerid}`, {
-      headers: { Authorization: `Bearer ${req.headers["x-access-token"]}` }
-    })
-    .then(result => {
-      return res.status(200).json(result.data);
-    })
-    .catch(err => {
-      return res.status(500).json({
-        success: false,
-        message: "l'offre d'emploi ne peut être chargée"
+router.get(
+  "/:id",
+  passport.authenticate("jwt", config.jwtSession),
+  (req, res, next) => {
+    const offerid = req.params.id;
+    // console.log(offerid);
+    // console.log(req.headers["x-access-token"]);
+    showjob
+      .get(`/${offerid}`, {
+        headers: { Authorization: `Bearer ${req.headers["x-access-token"]}` }
+      })
+      .then(result => {
+        return res.status(200).json(result.data);
+      })
+      .catch(err => {
+        return res.status(500).json({
+          success: false,
+          message: "l'offre d'emploi ne peut être chargée"
+        });
       });
-    });
-});
+  }
+);
 //add job to dashboard
-router.post("/:id", (req, res, next) => {
-  const offer = {
-    offerId: req.body.offerId,
-    companyName: req.body.companyName,
-    title: req.body.title,
-    description: req.body.description,
-    cityName: req.body.cityName,
-    contractTypeName: req.body.contractTypeName,
-    contractDuration: req.body.contractDuration,
-    experienceName: req.body.experienceName,
-    gpsLatitude: req.body.gpsLatitude,
-    gpsLongitude: req.body.gpsLongitude,
-    salaryComment: req.body.salaryComment,
-    weeklyWorkTime: req.body.weeklyWorkTime,
-    minSalary: req.body.minSalary,
-    experienceName: req.body.experienceName,
-    skills: req.body.skills,
-    activityName: req.body.activityName,
-    cityName: req.body.cityName,
-    cityCode: req.body.cityCode,
-    candidatId: req.body.candidatId
-  };
-  // Object.keys(offer).forEach(k => {
-  //   console.log(typeof offer[k]);
-  // });
-  // console.log(offer);
-  const newJob = new Job(offer);
-  newJob.save((err, job) => {
-    if (err) return next(err);
-    return res.json(job);
-  });
-});
+router.post(
+  "/:id",
+  passport.authenticate("jwt", config.jwtSession),
+  (req, res, next) => {
+    const offer = {
+      offerId: req.body.offerId,
+      companyName: req.body.companyName,
+      title: req.body.title,
+      description: req.body.description,
+      cityName: req.body.cityName,
+      contractTypeName: req.body.contractTypeName,
+      contractDuration: req.body.contractDuration,
+      experienceName: req.body.experienceName,
+      gpsLatitude: req.body.gpsLatitude,
+      gpsLongitude: req.body.gpsLongitude,
+      salaryComment: req.body.salaryComment,
+      weeklyWorkTime: req.body.weeklyWorkTime,
+      minSalary: req.body.minSalary,
+      experienceName: req.body.experienceName,
+      skills: req.body.skills,
+      activityName: req.body.activityName,
+      cityName: req.body.cityName,
+      cityCode: req.body.cityCode,
+      candidatId: req.body.candidatId
+    };
+    // Object.keys(offer).forEach(k => {
+    //   console.log(typeof offer[k]);
+    // });
+    // console.log(offer);
+    const newJob = new Job(offer);
+    newJob.save((err, job) => {
+      if (err) return next(err);
+      return res.json(job);
+    });
+  }
+);
 
 //List jobs offer
-router.post("/", (req, res, next) => {
-  console.log(req.headers);
-  listjob
-    .post("/", req.body.info, {
-      headers: { Authorization: `Bearer ${req.headers["x-access-token"]}` }
-    })
-    .then(result => {
-      res.status(200).json(result.data);
-    })
-    .catch(err => {
-      console.error(err.response);
-      return res
-        .status(500)
-        .json({ success: false, message: "comportement inattentu" });
-    });
-});
+router.post(
+  "/",
+  passport.authenticate("jwt", config.jwtSession),
+  (req, res, next) => {
+    console.log(req.headers);
+    listjob
+      .post("/", req.body.info, {
+        headers: { Authorization: `Bearer ${req.headers["x-access-token"]}` }
+      })
+      .then(result => {
+        res.status(200).json(result.data);
+      })
+      .catch(err => {
+        console.error(err.response);
+        return res
+          .status(500)
+          .json({ success: false, message: "comportement inattentu" });
+      });
+  }
+);
 
 module.exports = router;

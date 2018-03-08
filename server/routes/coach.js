@@ -17,18 +17,22 @@ const User = require("../models/user");
 //   });
 // });
 
-router.get("/profil/:id", (req, res, next) => {
-  const coachId = req.params.id;
-  User.findById(coachId)
-    .then(result => {
-      //console.log(result);
-      return res.json(result);
-    })
-    .catch(err => {
-      console.error(err);
-      throw err;
-    });
-});
+router.get(
+  "/profil/:id",
+  passport.authenticate("jwt", config.jwtSession),
+  (req, res, next) => {
+    const coachId = req.params.id;
+    User.findById(coachId)
+      .then(result => {
+        //console.log(result);
+        return res.json(result);
+      })
+      .catch(err => {
+        console.error(err);
+        throw err;
+      });
+  }
+);
 
 router.post(
   "/profil/:id",
