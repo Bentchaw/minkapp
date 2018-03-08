@@ -2,20 +2,25 @@
   <div class="container">
     <div class="card">
   <div class="card-content">
-    <p class="title">
+    <h1 class="title">
       {{candidate.username}}
-    </p>
+    </h1>
     <p> {{candidate.firstname}} {{candidate.lastname}}</p>
     <p>{{candidate.email}}</p>
     <p>{{candidate.description}}</p>
   </div>
 </div>
+<ListReqCandidat/>
   </div>
 </template>
 
 <script>
 import api from "../api";
+import ListReqCandidat from "../components/ListReqCandidat";
 export default {
+  components: {
+    ListReqCandidat
+  },
   data() {
     return {
       candidate: {}
