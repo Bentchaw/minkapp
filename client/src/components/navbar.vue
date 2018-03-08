@@ -85,15 +85,15 @@
               class="navbar-item" to="/login"
               @click.native="isActive = false"
             >
-              Login
+              Se connecter
             </router-link>
           </p>
           <p class="control">
             <router-link
-              class="navbar-item" to="/signup"
+              class="navbar-item" to="/register"
               @click.native="isActive = false"
             >
-              Signup
+              Inscription
             </router-link>
           </p>
         </div>
