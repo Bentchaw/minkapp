@@ -41,7 +41,7 @@ export default new Router({
       component: EmploiDetail
     },
     {
-      path: "/Recompdetail",
+      path: "/recompdetail",
       component: RecompDetail
     },
     {

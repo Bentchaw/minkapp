@@ -13,7 +13,7 @@
         <div id=texte>Tout le monde peut devenir coach,<br> offrez vos competences a ceux qui en ont besoin et en cas d'embauche vous etes recompensé.</div>
         <img src="/images/coachSuper.jpeg" height="250" width="370" alt="super" >
       </h2>
-      <a class="button is-newWhite is-rounded" id=btn>Je me lance</a>
+      <a href="/register" class="button is-dark is-inverted is-rounded" id=btn>Je me lance</a>
       <!-- <button id=btn>Je me lance</button> -->
     </div><br>
   </div>
@@ -30,10 +30,10 @@
   padding-top: 5%;
   float: left;
   text-align: unset;
-  box-shadow: 3px 3px 3px rgb(189, 187, 191);
-  /* box-shadow: 2px 2px azure, -1em 0 0.2em silver; */
+  box-shadow: 2px 3px 3px rgb(189, 187, 191);
   border-radius: 2%;
-  text-shadow: 2px 2px 8px rgb(191, 187, 187);
+  /* text-shadow: 1px 1px 1px rgb(191, 187, 187); */
+  color: #0a4751;
 }
 #btn {
   float: center;

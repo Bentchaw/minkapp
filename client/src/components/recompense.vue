@@ -27,7 +27,7 @@
    <p>Mink s'occupe de toutes les démarches  </p>
   </div>
  </div>
- <span><a class="button is-newWhite is-rounded" id=btn>Découvrir les récompenses</a></span>
+ <span><a href="/recompdetail" class="button is-dark is-inverted is-rounded" id=btn>Découvrir les récompenses</a></span>
 </div>
 
 
