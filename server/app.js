@@ -9,9 +9,11 @@ const cors = require("cors");
 const User = require("./models/user");
 const config = require("./config");
 const { Strategy, ExtractJwt } = require("passport-jwt");
+const history = require("express-history-api-fallback");
+require("dotenv").config();
 
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/minkapp-db");
+mongoose.connect(process.env.MONGODB_URI);
 
 //localhost/minkapp-db
 mongodb: var app = express();
@@ -57,11 +59,14 @@ const strategy = new Strategy(
 // tell pasport to use it
 passport.use(strategy);
 
-app.use("/", require("./routes/index"));
 app.use("/api", require("./routes/auth"));
 app.use("/api/pe", require("./routes/job"));
 app.use("/api/candidat", require("./routes/candidat"));
 app.use("/api/coach", require("./routes/coach"));
+
+const clientRoot = path.join(__dirname, "../client/dist");
+app.use("/", express.static(clientRoot));
+app.use(history("index.html", { root: clientRoot }));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
