@@ -1,5 +1,8 @@
 const express = require("express");
 const router = express.Router();
+const jwt = require("jwt-simple");
+const passport = require("passport");
+const config = require("../config");
 const User = require("../models/user");
 const Job = require("../models/job");
 

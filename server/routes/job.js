@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const axios = require("axios");
 const querystring = require("querystring");
+const jwt = require("jwt-simple");
+const passport = require("passport");
 const config = require("../config");
 const Job = require("../models/job");
 
