@@ -41,11 +41,11 @@
 </template>
 
 <style>
-body {
+/* body {
   background-image: url(/images/login.jpeg);
   background-size: cover;
   background-position: center;
-}
+} */
 </style>
 
 

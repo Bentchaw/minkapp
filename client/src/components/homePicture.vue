@@ -4,18 +4,6 @@
     <div class="container">
       <p>"Trouver un emploi, c'est déja un job à plein temps"</p>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
   </div>
 
   </div>
