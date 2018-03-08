@@ -1,18 +1,20 @@
 <template>
   <div id="app">
-      <navbar></navbar>
+    <navbar></navbar>
     <router-view/>
+    <MinkFooter></MinkFooter>
   </div>
 </template>
 
 <script>
 import navbar from "./components/navbar";
-// import Vue from "vue";
+import MinkFooter from "./components/MinkFooter";
 import api from "./api";
 
 export default {
   components: {
-    navbar
+    navbar,
+    MinkFooter
   },
   created() {
     const user = api.loadUser();
