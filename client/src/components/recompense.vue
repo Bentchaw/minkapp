@@ -48,9 +48,7 @@ Pour l'entreprise Mink s'occupe de l ensemble de formalitées administratives et
 
 <style scoped>
 .column {
-  background-color: silver;
-}
-#texte {
-  /* box-shadow: 3px 3px 3px rgb(189, 187, 191); */
+  background-color: rgba(162, 158, 158, 0.091);
+  box-shadow: 3px 3px 3px rgb(189, 187, 191);
 }
 </style>

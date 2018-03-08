@@ -28,7 +28,7 @@ export default {
   color: #D2E1DD;
 
 .is-newBlue
-    background-color: 	#E6E6FA   ;  
+    background-color: 	white ;  
 
 #app 
   font-family: "San Francisco", San Francisco, Arial, sans-serif;

@@ -13,12 +13,13 @@
           {{offer.cityName}} - {{offer.cityCode}}
         </p>
         <footer class="card-footer">
-          <a :href="'/emplois/'+offer.offerId" class="card-footer-item">Détail de l'offre</a>    
+          <a :href="'/emplois/'+offer.offerId" class="card-footer-item">Détail de l'offre</a> 
+             
         </footer>
       </div>
     </div>
   </article>
-</div>
+</div><br>
 
 </div>
 </div>
@@ -47,3 +48,10 @@ export default {
   }
 };
 </script>
+<style scoped>
+.box {
+  box-shadow: 10px 5px 5px rgba(230, 227, 227, 0.427);
+  border: 1px solid silver;
+}
+</style>
+

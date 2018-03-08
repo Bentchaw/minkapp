@@ -1,12 +1,15 @@
 <template>
-    <section class="container">
+    <section class="container ">
+        
 
     <div type="is-danger" has-icon v-if="error">
       {{ error.error }}
     </div>
     <div class="card">
         <div class="card-content">
-<form @submit.prevent="signup"> 
+<form @submit.prevent="signup" class="columns"> 
+    <div class="column top">
+
         <b-field label="Username">
             <b-input type="text" v-model="username"></b-input>
         </b-field>
@@ -43,90 +46,97 @@
         <b-field label="Description">
             <b-input maxlength="200" type="textarea" v-model="description"></b-input>
         </b-field>
+    </div>
+    <div class="column">
+
         <!-- catégories -->
+        <br><br><span>Cochez vos demandes</span>
         <div class="block">
-            <b-checkbox v-model="category"
+            <ul class="liste">
+            <li><b-checkbox v-model="category"
                 native-value="Anglais">
                 Anglais
-            </b-checkbox>
-            <b-checkbox v-model="category"
+            </b-checkbox></li>
+            <li><b-checkbox v-model="category"
                 native-value="Faire un CV">
                 Faire un CV
-            </b-checkbox>
-            <b-checkbox v-model="category"
+            </b-checkbox></li>
+            <li><b-checkbox v-model="category"
                 native-value="Faire une lettre de motivation">
                 Faire une lettre de motivation
-            </b-checkbox>
-            <b-checkbox v-model="category"
+            </b-checkbox></li>
+            <li><b-checkbox v-model="category"
                 native-value="Parler en public">
                 Parler en public
-            </b-checkbox>
-            <b-checkbox v-model="category"
+            </b-checkbox></li>
+            <li><b-checkbox v-model="category"
                 native-value="Aptitude informatique">
                 Aptitude informatique
-            </b-checkbox>
-            <b-checkbox v-model="category"
+            </b-checkbox></li>
+            <li><b-checkbox v-model="category"
                 native-value="Relation client">
                 Relation client
-            </b-checkbox>
-            <b-checkbox v-model="category"
+            </b-checkbox></li>
+            <li><b-checkbox v-model="category"
                 native-value="Demarches administratives">
                 Demarches administratives
-            </b-checkbox>
-            <b-checkbox v-model="category"
+            </b-checkbox></li>
+            <li><b-checkbox v-model="category"
                 native-value="Confiance en soi">
                 Confiance en soi
-            </b-checkbox>
-            <b-checkbox v-model="category"
+            </b-checkbox></li>
+            <li><b-checkbox v-model="category"
                 native-value="Suite Office">
                 Suite Office
-            </b-checkbox>
-            <b-checkbox v-model="category"
+            </b-checkbox></li>
+            <li><b-checkbox v-model="category"
                 native-value="Bâtiment">
                 Bâtiment
-            </b-checkbox>
-            <b-checkbox v-model="category"
+            </b-checkbox></li>
+            <li><b-checkbox v-model="category"
                 native-value="Sécurité">
                 Sécurité
-            </b-checkbox>
-            <b-checkbox v-model="category"
+            </b-checkbox></li>
+            <li><b-checkbox v-model="category"
                 native-value="Reconversion professionnelle">
                 Reconversion professionnelle
-            </b-checkbox>
-            <b-checkbox v-model="category"
+            </b-checkbox></li>
+            <li><b-checkbox v-model="category"
                 native-value="Petite enfance">
                 Petite enfance
-            </b-checkbox>
-            <b-checkbox v-model="category"
+            </b-checkbox></li>
+            <li><b-checkbox v-model="category"
                 native-value="Enseignement">
                 Enseignement
-            </b-checkbox>
-            <b-checkbox v-model="category"
+            </b-checkbox></li>
+            <li><b-checkbox v-model="category"
                 native-value="Cuisine">
                 Cuisine
-            </b-checkbox>
-            <b-checkbox v-model="category"
+            </b-checkbox></li>
+            <li><b-checkbox v-model="category"
                 native-value="Service bar">
                 Service bar
-            </b-checkbox>
-            <b-checkbox v-model="category"
+            </b-checkbox></li>
+            <li><b-checkbox v-model="category"
                 native-value="Plomberie">
                 Plomberie
-            </b-checkbox>
-            <b-checkbox v-model="category"
+            </b-checkbox></li>
+            <li><b-checkbox v-model="category"
                 native-value="Peinture">
                 Peinture
-            </b-checkbox>
-            <b-checkbox v-model="category"
+            </b-checkbox></li>
+            <li><b-checkbox v-model="category"
                 native-value="Taxi / Uber">
                 Taxi / Uber
-            </b-checkbox>
-            <b-checkbox v-model="category"
+            </b-checkbox></li>
+            <li><b-checkbox v-model="category"
                 native-value="Freelance">
                 Freelance
-            </b-checkbox>
+            </b-checkbox></li>
+            </ul>
         </div>
-        <button class="button">Créer votre compte</button>
+    </div>
+        <button class="button is-info is-rounded">Créer votre compte</button>
       </form>
         </div>
     </div>
@@ -195,6 +205,19 @@ export default {
 };
 </script>
 <style scoped>
-
+.liste {
+  text-align: left;
+  padding-top: 20%;
+  margin-left: 25%;
+  background-color: rgba(163, 221, 240, 0.262);
+  border-radius: 4%;
+}
+.top {
+  background-color: rgba(115, 158, 210, 0.297);
+  border: 1px solid rgb(181, 176, 176);
+}
+.card {
+  /* background-color: rgba(177, 191, 194, 0.119); */
+}
 </style>
 

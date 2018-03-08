@@ -26,13 +26,14 @@
 #texte {
   height: 200px;
   width: 50%;
-  background-color: rgb(237, 235, 235);
+  background-color: rgba(162, 158, 158, 0.091);
   padding-top: 5%;
   float: left;
   text-align: unset;
   box-shadow: 3px 3px 3px rgb(189, 187, 191);
   /* box-shadow: 2px 2px azure, -1em 0 0.2em silver; */
   border-radius: 2%;
+  text-shadow: 2px 2px 8px rgb(191, 187, 187);
 }
 #btn {
   float: center;
