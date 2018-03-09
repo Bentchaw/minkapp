@@ -39,7 +39,7 @@
         Entreprises
       </h1><br>
       <h2 class="subtitle">
-        Trouver votre nouveau talent avec Mink c'est la garantie d'un candidat motivé, epaulé par un mentor qui saura 
+        Trouver votre nouveau talent avec Mink c'est la garantie d'un candidat motivé, epaulé par un mentor <br> qui saura 
         l'accompagner dans ce nouveau chemin. <br>
         Egalement, Mink s'occupe de l ensemble des démarches administratives liées à l'embauche. <br>
         Grâce à Mink, soyez certain de beneficier de l'ensemble des aides offertes par votre departement. <br>

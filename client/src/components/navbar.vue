@@ -28,21 +28,16 @@
                       Dashboard
                     </router-link>
                   </p>
-                  <!--
-                  <a :href="'/candidat/dashboard/'+this.$root.user.id">
-                    Dashboard Candidat
-                  </a>
-                  -->
                   <p class="control">
                     <router-link class="navbar-item" :to="'/candidat/profil/'+this.$root.user.id" @click.native="isActive = false">
                       Profil
                     </router-link>
                   </p>
-                  <!--
-                  <a href='/' class="navbar-item ">
-                    Profil candidat
-                  </a>
-                  -->
+                  <p class="control">
+                    <router-link class="navbar-item" :to="'/candidat/matches/'+this.$root.user.id" @click.native="isActive = false">
+                      Profil
+                    </router-link>
+                  </p>
                   <p class="control">
                     <a class="navbar-item" @click="logout">
                       Logout
@@ -69,7 +64,12 @@
                     </router-link>
                   </p>
                   <p class="control">
-                    <router-link class="navbar-item" :to="'/candidat/profil/'+this.$root.user.id" @click.native="isActive = false">
+                    <router-link class="navbar-item" :to="'/coach/profil/'+this.$root.user.id" @click.native="isActive = false">
+                      Profil
+                    </router-link>
+                  </p>
+                  <p class="control">
+                    <router-link class="navbar-item" :to="'/coach/matches/'+this.$root.user.id" @click.native="isActive = false">
                       Profil
                     </router-link>
                   </p>

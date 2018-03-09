@@ -1,6 +1,6 @@
 <template>
 
- <section class="hero is-primary is-medium ">
+ <section class="hero is-medium footer">
   <div class="hero-foot ">
     <nav class="tabs">
       <div class="container">
@@ -18,5 +18,12 @@
 <style scoped>
 * {
   background-color: silver;
+}
+
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
 </style>

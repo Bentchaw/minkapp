@@ -52,8 +52,7 @@ const userSchema = new Schema({
     required: true,
     type: String
   },
-  picPath: String,
-  picName: String
+  picture: String
 });
 
 userSchema.plugin(passportLocalMongoose);

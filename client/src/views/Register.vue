@@ -158,6 +158,11 @@
                     </div>
                     <button class="button is-info is-rounded">Créer votre compte</button>
                 </form>
+                <form @submit.prevent="uploadPicture">
+                    <input type="file" name="picture" @change="picture = $event.target.files[0]">
+                    <br>
+                    <button>Send</button>
+                </form>
             </div>
         </div>
 
@@ -168,77 +173,78 @@
 </template>
 
 <script>
-    import api from "../api";
+import api from "../api";
+import axios from "axios";
 
-    export default {
-        data() {
-            return {
-                username: "",
-                password: "",
-                firstname: "",
-                lastname: "",
-                email: "",
-                adress: "",
-                zipcode: "",
-                city: "",
-                role: "",
-                category: [],
-                description: "",
-
-                error: null
-            };
-        },
-        methods: {
-            signup() {
-                this.error = null;
-                api
-                    .signup({
-                        username: this.username,
-                        password: this.password,
-                        firstname: this.firstname,
-                        lastname: this.lastname,
-                        email: this.email,
-                        adress: this.adress,
-                        zipcode: this.zipcode,
-                        city: this.city,
-                        role: this.role,
-                        description: this.description,
-                        category: this.category
-                    })
-                    .then(result => {
-                        this.$router.push("/login");
-                    })
-                    .catch(err => {
-                        this.error = err;
-                    });
-            }
-        },
-
-        computed: {
-            usernameError() {
-                if (!this.error) return null;
-                if (this.error.name === "UserExistsError") {
-                    return this.error.message;
-                }
-            }
-        }
+export default {
+  data() {
+    return {
+      username: "",
+      password: "",
+      firstname: "",
+      lastname: "",
+      email: "",
+      adress: "",
+      zipcode: "",
+      city: "",
+      role: "",
+      category: [],
+      description: "",
+      picture: [],
+      error: null
     };
+  },
+  methods: {
+    signup() {
+      this.error = null;
+      api
+        .signup({
+          username: this.username,
+          password: this.password,
+          firstname: this.firstname,
+          lastname: this.lastname,
+          email: this.email,
+          adress: this.adress,
+          zipcode: this.zipcode,
+          city: this.city,
+          role: this.role,
+          description: this.description,
+          category: this.category
+        })
+        .then(result => {
+          this.$router.push("/login");
+        })
+        .catch(err => {
+          this.error = err;
+        });
+    }
+  },
+
+  computed: {
+    usernameError() {
+      if (!this.error) return null;
+      if (this.error.name === "UserExistsError") {
+        return this.error.message;
+      }
+    }
+  }
+};
 </script>
 <style scoped>
-    .liste {
-        text-align: left;
-        padding-top: 20%;
-        margin-left: 25%;
-        /* background-color: rgba(163, 221, 240, 0.262); */
-        border-radius: 4%;
-    }
+.liste {
+  text-align: left;
+  padding-top: 20%;
+  margin-left: 25%;
+  /* background-color: rgba(163, 221, 240, 0.262); */
+  border-radius: 4%;
+}
 
-    .top {
-        background-color: rgba(194, 199, 205, 0.077);
-        border: 1px solid rgb(181, 176, 176);
-    }
+.top {
+  background-color: rgba(194, 199, 205, 0.077);
+  border: 1px solid rgb(181, 176, 176);
+}
 
-    .card {
-        /* background-color: rgba(177, 191, 194, 0.119); */
-    }
+.card {
+  /* background-color: rgba(177, 191, 194, 0.119); */
+}
 </style>
