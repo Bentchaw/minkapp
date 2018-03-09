@@ -35,7 +35,7 @@
                   </p>
                   <p class="control">
                     <router-link class="navbar-item" :to="'/candidat/matches/'+this.$root.user.id" @click.native="isActive = false">
-                      Profil
+                      Matches
                     </router-link>
                   </p>
                   <p class="control">
@@ -70,7 +70,7 @@
                   </p>
                   <p class="control">
                     <router-link class="navbar-item" :to="'/coach/matches/'+this.$root.user.id" @click.native="isActive = false">
-                      Profil
+                      Matches
                     </router-link>
                   </p>
                   <p class="control">
